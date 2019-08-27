@@ -8,12 +8,14 @@
 
 <script>
   import firebase from 'firebase'
+  import db from '@/firebase/init'
+
   export default {
     name: "GMap",
     data() {
       return {
-        lat: 53,
-        lng: -2
+        lat: 52.520007,
+        lng: 13.404954
       }
     },
     methods: {
@@ -28,8 +30,33 @@
       }
     },
     mounted() {
-      this.renderMap()
-      console.log(firebase.auth().currentUser)
+      let user = firebase.auth().currentUser
+
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(pos => {
+          this.lat = pos.coords.latitude
+          this.lng = pos.coords.longitude
+
+          db.collection('users').where('user_id', '==', user.uid).get()
+          .then(snapshot => {
+            snapshot.forEach(doc => {
+              db.collection('users').doc(doc.id).update({
+                geolocation: {
+                  lat: pos.coords.latitude,
+                  lng: pos.coords.longitude
+                }
+              })
+            })
+          }).then(() => {
+            this.renderMap()
+          })
+        }, (err) => {
+          console.log(err)
+          this.renderMap()
+        }, { maximumAge: 60000, timeout: 3000 })
+      } else {
+          this.renderMap()
+      }
     }
   }
 </script>
