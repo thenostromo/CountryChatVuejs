@@ -2,19 +2,46 @@
   <div class="navbar">
     <nav class="deep-purple darken-1">
       <div class="container">
-        <router-link :to="{ name: 'GMap'}" class="brand-logo left">CountryChat</router-link>
+        <router-link
+          :to="{ name: 'GMap'}"
+          class="brand-logo left"
+        >
+          CountryChat
+        </router-link>
         <ul class="right">
-          <li v-if="!user">
-            <router-link :to="{ name: 'Signup' }">Sign up</router-link>
+          <li
+            v-if="!user"
+          >
+            <router-link
+              :to="{ name: 'Signup' }"
+            >
+              Sign up
+            </router-link>
           </li>
-          <li v-if="!user">
-            <router-link :to="{ name: 'Login' }">Log in</router-link>
+          <li
+            v-if="!user"
+          >
+            <router-link
+              :to="{ name: 'Login' }"
+            >
+              Log in
+            </router-link>
           </li>
-          <li v-if="user">
-            <a>{{ user.email }}</a>
+          <li
+            v-if="user"
+          >
+            <a>
+              {{ user.email }}
+            </a>
           </li>
-          <li v-if="user">
-            <a @click="logout">Logout</a>
+          <li
+            v-if="user"
+          >
+            <a
+              @click="logout"
+            >
+              Logout
+            </a>
           </li>
         </ul>
       </div>

@@ -1,0 +1,45 @@
+body {
+  background: #ddd;
+}
+.login {
+  max-width: 400px;
+  margin-top: 60px;
+}
+.login h2 {
+  font-size: 2.4em;
+}
+.login .field {
+  margin-bottom: 16px;
+}
+.signup {
+  max-width: 400px;
+  margin-top: 60px;
+}
+.signup h2 {
+  font-size: 2.4em;
+}
+.signup .field {
+  margin-bottom: 16px;
+}
+.google-map {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.view-profile .card {
+  padding: 20px;
+  margin-top: 60px;
+}
+.view-profile h2 {
+  font-size: 2em;
+  margin-top: 0;
+}
+.view-profile li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
