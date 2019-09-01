@@ -16,7 +16,6 @@
 </script>
 
 <style>
-  body {
-    background: #ddd;
-  }
+
 </style>
+<style src='./assets/css/main.css'></style>

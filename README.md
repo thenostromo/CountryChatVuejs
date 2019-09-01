@@ -1,6 +1,21 @@
-# country-chat-vuejs
+# CountryChatVuejs
 
-> A Vue.js project
+A map with geo-chats.
+
+Technical Kit:
++ vuejs;
++ vuex;
++ firebase;
++ materialize css;
+
+TEST USER:
+login: test@test.ru
+password: 123123
+
+Warning! Messages will save only in current session.
+If you update your page, you won't see them.
+
+Demo: http://136.243.142.144:8004
 
 ## Build Setup
 
@@ -17,5 +32,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
